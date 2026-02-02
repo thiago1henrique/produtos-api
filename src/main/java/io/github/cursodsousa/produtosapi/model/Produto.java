@@ -1,12 +1,28 @@
 package io.github.cursodsousa.produtosapi.model;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 //POJO -> Plain Old Java Object
+
+@Entity
+@Table(name = "produto") // é opicional caso o nome da tabela for igual da classe.
 public class Produto {
 
+    @Id
+    @Column(name = "id") // só é necessário caso o valor no banco seja outro. Banco: código / Classe: id.
     private String id;
+
+    @Column
     private String nome;
+
+    @Column
     private String descricao;
+
+    @Column
     private Double preco;
 
     public String getId() {
